@@ -92,7 +92,7 @@ setup(
     url=URL,
     py_modules=["pymocky"],
     entry_points={
-        "console_scripts": ["app=cli:main"],
+        "console_scripts": ["pymocky=pymocky.cli:main"],
     },
     install_requires=REQUIRED,
     include_package_data=True,

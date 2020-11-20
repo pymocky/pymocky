@@ -146,7 +146,6 @@ To package and upload for distribution on PyPi server use:
 Contributing
 ------------
 
-
 * Fork the project and clone locally.
 * Create a new branch for what you're going to work on.
 * Push to your origin repository.
@@ -160,14 +159,12 @@ Buy me a coffee
    :alt: Buy Me a Coffee at ko-fi.com
    :height: 40
 
-
 Supported By Jetbrains IntelliJ IDEA
 ------------------------------------
 
 .. image:: https://github.com/pymocky/pymocky/raw/master/extras/images/jetbrains-logo.png
    :target: https://www.jetbrains.com/
    :alt: Supported By Jetbrains IntelliJ IDEA
-
 
 License
 -------
