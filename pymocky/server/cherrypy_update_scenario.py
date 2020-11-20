@@ -15,7 +15,9 @@ class CherryPyUpdateScenario(object):
     @staticmethod
     def is_update_scenario(url):
         is_update_scenario_url = (
-            re.match(r"^.*(127\.0\.0\.1|localhost|pymocky)(:\d*)?/update-scenario$", url)
+            re.match(
+                r"^.*(127\.0\.0\.1|localhost|pymocky)(:\d*)?/update-scenario$", url
+            )
             is not None
         )
 
