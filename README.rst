@@ -164,10 +164,9 @@ Buy me a coffee
 Supported By Jetbrains IntelliJ IDEA
 ------------------------------------
 
-.. image:: extras/images/jetbrains-logo.png
-   :target: extras/images/jetbrains-logo.png
+.. image:: https://github.com/pymocky/pymocky/raw/master/extras/images/jetbrains-logo.png
+   :target: https://www.jetbrains.com/
    :alt: Supported By Jetbrains IntelliJ IDEA
-
 
 
 License
