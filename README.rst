@@ -11,6 +11,12 @@ PyMocky
    :target: https://codecov.io/gh/pymocky/pymocky
    :alt: codecov
 
+|  
+
+.. image:: https://github.com/pymocky/pymocky/raw/master/extras/images/logo.png
+   :target: https://github.com/pymocky/pymocky
+   :alt: PyMocky
+
 
 Mock server to return static response.
 
