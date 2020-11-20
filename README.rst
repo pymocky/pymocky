@@ -1,5 +1,9 @@
-PyMocky
-=======
+.. image:: https://github.com/pymocky/pymocky/raw/master/extras/images/logo.png
+   :target: https://github.com/pymocky/pymocky
+   :alt: PyMocky
+   :height: 100
+
+|
 
 .. image:: https://github.com/pymocky/pymocky/workflows/Python%20package/badge.svg
    :target: https://github.com/pymocky/pymocky/workflows/Python%20package/badge.svg
@@ -12,11 +16,6 @@ PyMocky
    :alt: codecov
 
 |  
-
-.. image:: https://github.com/pymocky/pymocky/raw/master/extras/images/logo.png
-   :target: https://github.com/pymocky/pymocky
-   :alt: PyMocky
-
 
 Mock server to return static response.
 
