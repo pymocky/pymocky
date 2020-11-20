@@ -62,15 +62,34 @@ Test again with command (need curl):
    curl http://localhost:9000/login
 
 
-Example of YAML files
----------------------
+Example of YAML file
+--------------------
 
-You can check some files here:
+.. code-block::
 
-..
-
-   extras/sample/
-
+   mappings:
+   - id: hello_world
+      scenario: login-success
+      request:
+         url: .*pymock_hello_world.*
+         method: post
+         query_string: .*param1=value&param2=value2
+         form_fields:
+         username: .*demo
+         password: .*12345
+         headers:
+         "Content-Type": "application/json"
+         body: .*Hello World.*
+      response:
+         headers:
+         "Content-Type": "application/json"
+         body_raw: Hello world from pymocky!
+         body_file: files/dummy.xml
+         body_json:
+         success: false
+         data:
+            errors: []
+         body_image: images/image1.png
 
 
 You can use "body_raw", "body_file", "body_json" or "body_image" as response type.
