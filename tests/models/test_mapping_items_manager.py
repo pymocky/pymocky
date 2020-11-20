@@ -4,8 +4,8 @@ from os import path
 
 from mock import Mock
 
-from app.models.config import Config
-from app.models.mapping_items_manager import MappingItemsManager, Constants
+from pymocky.models.config import Config
+from pymocky.models.mapping_items_manager import MappingItemsManager, Constants
 
 
 class MappingItemsManagerTests(unittest.TestCase):

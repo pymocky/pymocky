@@ -1,7 +1,7 @@
 import mimetypes
 import os
 
-from app.models.body_response import BodyResponse
+from pymocky.models.body_response import BodyResponse
 
 
 class MappingResponse(object):

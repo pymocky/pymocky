@@ -1,7 +1,7 @@
 import json
 import os
 
-from app.utils.file import File
+from pymocky.utils.file import File
 
 
 class BodyResponse(object):

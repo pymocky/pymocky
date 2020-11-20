@@ -1,6 +1,6 @@
 import unittest
 
-from app.models.body_response import BodyResponse
+from pymocky.models.body_response import BodyResponse
 
 
 class BodyResponseTests(unittest.TestCase):

@@ -1,10 +1,10 @@
 from time import sleep
 
-from app.models.config import Config
-from app.utils.log import Log
-from app.server.cherrypy_reload import cherry_py_check_reload
-from app.server.cherrypy_status import cherry_py_check_status
-from app.server.cherrypy_update_scenario import cherry_py_check_update_scenario
+from pymocky.models.config import Config
+from pymocky.utils.log import Log
+from pymocky.server.cherrypy_reload import cherry_py_check_reload
+from pymocky.server.cherrypy_status import cherry_py_check_status
+from pymocky.server.cherrypy_update_scenario import cherry_py_check_update_scenario
 
 
 class CherryPyMapper(object):

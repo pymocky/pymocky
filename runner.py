@@ -1,4 +1,4 @@
-from app.cli import main
+from pymocky.cli import main
 
 if __name__ == "__main__":
     main()

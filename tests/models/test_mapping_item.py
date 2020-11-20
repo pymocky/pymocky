@@ -4,7 +4,7 @@ from os import path
 
 from mock import Mock
 
-from app.models.mapping_item import MappingItem
+from pymocky.models.mapping_item import MappingItem
 
 res_path = os.path.dirname(path.abspath(__file__)) + "/res"
 

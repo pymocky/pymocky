@@ -1,6 +1,6 @@
 import unittest
 
-from app.models.header_matcher import HeaderMatcher
+from pymocky.models.header_matcher import HeaderMatcher
 
 
 class HeaderMatcherTests(unittest.TestCase):

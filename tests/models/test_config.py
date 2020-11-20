@@ -1,8 +1,8 @@
 import unittest
 
-from app.models.config import Config
-from app.models.constants import Constants
-from app.utils.args import Args
+from pymocky.models.config import Config
+from pymocky.models.constants import Constants
+from pymocky.utils.args import Args
 
 
 class ConfigTests(unittest.TestCase):

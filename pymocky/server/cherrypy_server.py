@@ -4,10 +4,10 @@ import socket
 import cherrypy
 import cherrypy_cors
 
-from app.models.config import Config
-from app.utils.log import Log
-from app.models.mapping_items_manager import MappingItemsManager
-from app.server.cherrypy_mapper import CherryPyMapper
+from pymocky.models.config import Config
+from pymocky.utils.log import Log
+from pymocky.models.mapping_items_manager import MappingItemsManager
+from pymocky.server.cherrypy_mapper import CherryPyMapper
 
 
 class CherryPyServer(object):

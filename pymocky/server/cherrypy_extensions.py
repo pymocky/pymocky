@@ -1,6 +1,6 @@
 import cherrypy
 
-from app.models.mapping_request import MappingRequest
+from pymocky.models.mapping_request import MappingRequest
 
 
 def to_mapper_request():

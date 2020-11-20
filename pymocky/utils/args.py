@@ -1,6 +1,6 @@
 from argparse import ArgumentParser
 
-from app.models.constants import Constants
+from pymocky.models.constants import Constants
 
 
 class Args(object):

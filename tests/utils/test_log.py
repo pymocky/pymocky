@@ -5,10 +5,10 @@ from unittest.mock import patch
 
 from colorama import Fore
 
-from app.models.mapping_item import MappingItem
-from app.models.mapping_request import MappingRequest
-from app.models.mapping_response import MappingResponse
-from app.utils.log import Log
+from pymocky.models.mapping_item import MappingItem
+from pymocky.models.mapping_request import MappingRequest
+from pymocky.models.mapping_response import MappingResponse
+from pymocky.utils.log import Log
 
 
 class LogTests(unittest.TestCase):

@@ -1,6 +1,6 @@
 import unittest
 
-from app.models.constants import Constants
+from pymocky.models.constants import Constants
 
 
 class ConstantTests(unittest.TestCase):

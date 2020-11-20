@@ -5,10 +5,10 @@ from unittest.mock import patch
 
 from watchdog.observers import Observer
 
-from app.models.config import Config
-from app.models.mapper_directory_listener import MapperDirectoryListener
-from app.models.mapping_items_manager import MappingItemsManager
-from app.utils.file import File
+from pymocky.models.config import Config
+from pymocky.models.mapper_directory_listener import MapperDirectoryListener
+from pymocky.models.mapping_items_manager import MappingItemsManager
+from pymocky.utils.file import File
 
 
 class MapperDirectoryListenerTests(unittest.TestCase):

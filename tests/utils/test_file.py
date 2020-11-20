@@ -1,7 +1,7 @@
 import os
 import unittest
 
-from app.utils.file import File
+from pymocky.utils.file import File
 
 
 class FileTests(unittest.TestCase):

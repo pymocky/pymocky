@@ -3,9 +3,9 @@ from argparse import ArgumentParser
 
 import colorama
 
-from app.models.config import Config
-from app.models.core import Core
-from app.utils.args import Args
+from pymocky.models.config import Config
+from pymocky.models.core import Core
+from pymocky.utils.args import Args
 
 
 def main():

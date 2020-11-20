@@ -1,4 +1,4 @@
-from app.models.constants import Constants
+from pymocky.models.constants import Constants
 
 
 class Config(object):

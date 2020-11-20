@@ -1,7 +1,7 @@
 import re
 
-from app.models.config import Config
-from app.utils.log import Log
+from pymocky.models.config import Config
+from pymocky.utils.log import Log
 
 
 class CherryPyReload(object):

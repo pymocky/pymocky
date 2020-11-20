@@ -1,6 +1,6 @@
 from watchdog.events import FileSystemEventHandler
 
-from app.utils.log import Log
+from pymocky.utils.log import Log
 
 
 class MapperDirectoryListener(FileSystemEventHandler):

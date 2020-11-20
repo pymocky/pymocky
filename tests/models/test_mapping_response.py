@@ -1,8 +1,8 @@
 import os
 import unittest
 
-from app.models.config import Config
-from app.models.mapping_response import MappingResponse
+from pymocky.models.config import Config
+from pymocky.models.mapping_response import MappingResponse
 
 
 class MappingResponseTests(unittest.TestCase):

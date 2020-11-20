@@ -1,8 +1,8 @@
 import yaml
 from watchdog.observers import Observer
 
-from app.utils.file import File
-from app.utils.log import Log
+from pymocky.utils.file import File
+from pymocky.utils.log import Log
 from .config import Config
 from .mapper_directory_listener import MapperDirectoryListener
 from .mapping_item import *

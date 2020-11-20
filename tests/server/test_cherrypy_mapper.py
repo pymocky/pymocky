@@ -2,8 +2,8 @@ import unittest
 
 from mock import Mock
 
-from app.utils.log import Log
-from app.server.cherrypy_mapper import CherryPyMapper
+from pymocky.utils.log import Log
+from pymocky.server.cherrypy_mapper import CherryPyMapper
 
 
 class CherryPyMapperTests(unittest.TestCase):

@@ -1,8 +1,8 @@
 import re
 
-from app.models.config import Config
-from app.models.header_matcher import HeaderMatcher
-from app.utils.log import Log
+from pymocky.models.config import Config
+from pymocky.models.header_matcher import HeaderMatcher
+from pymocky.utils.log import Log
 
 
 class MappingRequest(object):
