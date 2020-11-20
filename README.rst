@@ -133,6 +133,13 @@ To coverage test use the command:
    python -m pytest --cov=. --cov-report=xml --cov-report=html tests
 
 
+To install locally during development:
+
+.. code-block::
+
+   python setup.py install
+
+
 Packaging
 ---------
 
@@ -151,6 +158,7 @@ Contributing
 * Push to your origin repository.
 * Create a new pull request in GitHub.
 
+
 Buy me a coffee
 ---------------
 
@@ -159,12 +167,14 @@ Buy me a coffee
    :alt: Buy Me a Coffee at ko-fi.com
    :height: 40
 
+
 Supported By Jetbrains IntelliJ IDEA
 ------------------------------------
 
 .. image:: https://github.com/pymocky/pymocky/raw/master/extras/images/jetbrains-logo.png
    :target: https://www.jetbrains.com/
    :alt: Supported By Jetbrains IntelliJ IDEA
+
 
 License
 -------
