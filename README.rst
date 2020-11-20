@@ -75,11 +75,11 @@ Example of YAML file
          username: .*demo
          password: .*12345
          headers:
-         "Content-Type": "application/json"
+            "Content-Type": "application/json"
          body: .*Hello World.*
       response:
          headers:
-         "Content-Type": "application/json"
+            "Content-Type": "application/json"
          body_raw: Hello world from pymocky!
          body_file: files/dummy.xml
          body_json:
