@@ -24,6 +24,7 @@ LICENSE = "MIT"
 # Packages required
 REQUIRED = [
     "cherrypy>=18.0",
+    "cherrypy_cors",
     "pyyaml",
     "watchdog",
     "colorama",
