@@ -1,6 +1,3 @@
-.. role:: raw-html-m2r(raw)
-   :format: html
-
 PyMocky
 =======
 
@@ -15,8 +12,8 @@ PyMocky
    :alt: codecov
 
 
-
 Mock server to return static response.
+
 
 Install
 -------
@@ -158,7 +155,11 @@ Contributing
 Buy me a coffee
 ---------------
 
-:raw-html-m2r:`<a href='https://ko-fi.com/paulocoutinho' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>`
+.. image:: https://az743702.vo.msecnd.net/cdn/kofi1.png?v=2
+   :target: https://ko-fi.com/paulocoutinho
+   :alt: Buy Me a Coffee at ko-fi.com
+   :height: 40
+
 
 Supported By Jetbrains IntelliJ IDEA
 ------------------------------------
