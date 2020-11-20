@@ -1,0 +1,16 @@
+mappings:
+  - request:
+      url: .*pymock_json_1$
+    response:
+      body_json:
+        success: false
+        data:
+          errors: [ ]
+  - request:
+      url: .*pymock_json_1$
+    response:
+      body_file: files/dummy.json
+  - request:
+      url: .*pymock_json_2$
+    response:
+      body_file: files/dummy.json

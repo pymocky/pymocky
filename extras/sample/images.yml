@@ -1,0 +1,9 @@
+mappings:
+  - request:
+      url: .*pymock_image_1$
+    response:
+      body_image: images/image1.png
+  - request:
+      url: .*pymock_image_2$
+    response:
+      body_image: images/image2.jpg

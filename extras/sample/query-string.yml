@@ -1,0 +1,7 @@
+mappings:
+  - request:
+      url: .*pymock_query_string.*
+      method: get
+      query_string: .*param1=value&param2=value2
+    response:
+      body_raw: Query string found!

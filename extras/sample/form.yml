@@ -1,0 +1,9 @@
+mappings:
+  - request:
+      url: .*pymock_form.*
+      method: post
+      form_fields:
+        username: .*demo
+        password: .*12345
+    response:
+      body_raw: Posted form!

@@ -1,0 +1,6 @@
+mappings:
+  - request:
+      url: .*pymock_hello_world.*
+      method: get
+    response:
+      body_raw: Hello world from pymocky!
