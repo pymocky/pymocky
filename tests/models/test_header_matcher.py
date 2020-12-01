@@ -88,3 +88,15 @@ class HeaderMatcherTests(unittest.TestCase):
         matches = hm.matches(other_headers)
 
         self.assertEqual(matches, False)
+
+    def test_header_key_not_match(self):
+        headers = ["Content-Type", "application/json"]
+
+        other_headers = {
+            "Content-Length": "123",
+        }
+
+        hm = HeaderMatcher(headers)
+        match = hm.header_match(headers, other_headers)
+
+        self.assertEqual(match, False)
