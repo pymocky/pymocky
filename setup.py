@@ -24,6 +24,7 @@ LICENSE = "MIT"
 # Packages required
 REQUIRED = [
     "cherrypy>=18.0",
+    "cherrypy_cors",
     "pyyaml",
     "watchdog",
     "colorama",
@@ -90,7 +91,7 @@ setup(
     author_email=EMAIL,
     python_requires=REQUIRES_PYTHON,
     url=URL,
-    py_modules=["pymocky"],
+    packages=[""],
     entry_points={
         "console_scripts": ["pymocky=pymocky.cli:main"],
     },

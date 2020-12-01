@@ -1,6 +1,6 @@
 import requests
 
-from app import __version__
+from pymocky import __version__
 from pymocky.models.constants import Constants
 from pymocky.server.cherrypy_server import CherryPyServer
 from pymocky.utils.log import Log

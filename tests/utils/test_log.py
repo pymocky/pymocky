@@ -132,7 +132,9 @@ class LogTests(unittest.TestCase):
 
             self.assertIn("'mock_id': 'test_id'", output.getvalue().strip())
             self.assertIn("'mock_scenario': 'test_scenario'", output.getvalue().strip())
-            self.assertIn("'url': 'http://localhost/pymocky'", output.getvalue().strip())
+            self.assertIn(
+                "'url': 'http://localhost/pymocky'", output.getvalue().strip()
+            )
             self.assertIn("'method': 'post'", output.getvalue().strip())
             self.assertIn("'headers': {}", output.getvalue().strip())
             self.assertIn("'body': 'Hello World'", output.getvalue().strip())

@@ -1,5 +1,9 @@
-PyMocky
-=======
+.. image:: https://github.com/pymocky/pymocky/raw/master/extras/images/logo.png
+   :target: https://github.com/pymocky/pymocky
+   :alt: PyMocky
+   :height: 100
+
+|
 
 .. image:: https://github.com/pymocky/pymocky/workflows/Python%20package/badge.svg
    :target: https://github.com/pymocky/pymocky/workflows/Python%20package/badge.svg
@@ -11,6 +15,7 @@ PyMocky
    :target: https://codecov.io/gh/pymocky/pymocky
    :alt: codecov
 
+|  
 
 Mock server to return static response.
 
@@ -75,11 +80,11 @@ Example of YAML file
          username: .*demo
          password: .*12345
          headers:
-         "Content-Type": "application/json"
+            "Content-Type": "application/json"
          body: .*Hello World.*
       response:
          headers:
-         "Content-Type": "application/json"
+            "Content-Type": "application/json"
          body_raw: Hello world from pymocky!
          body_file: files/dummy.xml
          body_json:
