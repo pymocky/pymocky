@@ -1,6 +1,7 @@
 import os
 import re
 import shutil
+import sys
 from pathlib import Path
 
 import regex
@@ -29,9 +30,14 @@ class File(object):
                 else:
                     result = path
 
-        result = Path(os.path.expandvars(result))
+        result = os.path.expanduser(result)
+        result = os.path.expandvars(result)
+        result = Path(result)
 
-        return str(result.resolve().absolute())
+        if sys.version_info < (3, 6):
+            return str(result.absolute())
+        else:
+            return str(result.resolve().absolute())
 
     @staticmethod
     def write_to_file(dirname, filename, content):

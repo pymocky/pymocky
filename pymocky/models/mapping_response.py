@@ -71,7 +71,12 @@ class MappingResponse(object):
             if os.path.isfile(full_path):
                 # return a dict from python file
                 module_name = File.get_filename_without_extension(full_path)
-                spec = importlib.util.spec_from_file_location(module_name, full_path)
+
+                spec = importlib.util.spec_from_file_location(
+                    module_name,
+                    full_path,
+                )
+
                 module = importlib.util.module_from_spec(spec)
                 spec.loader.exec_module(module)
 
