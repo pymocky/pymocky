@@ -1,10 +1,11 @@
 from time import sleep
 
+from pymocky.models.body_response import BodyResponse
 from pymocky.models.config import Config
-from pymocky.utils.log import Log
 from pymocky.server.cherrypy_reload import cherry_py_check_reload
 from pymocky.server.cherrypy_status import cherry_py_check_status
 from pymocky.server.cherrypy_update_scenario import cherry_py_check_update_scenario
+from pymocky.utils.log import Log
 
 
 class CherryPyMapper(object):
@@ -53,6 +54,9 @@ class CherryPyMapper(object):
 
             sleep(delay)
 
+        if response.body.body_type == BodyResponse.PYTHON:
+            response.process_python_data({"request": request})
+
         self.cherrypy.response.status = response.status
         self.fill_headers(response.headers)
 
@@ -60,13 +64,6 @@ class CherryPyMapper(object):
             Log.log_response(response)
 
         return response.body_response()
-
-    def check_status(func):
-        def parse_status(*args, **kwargs):
-            print(args)
-            return ""
-
-        return parse_status
 
     def fill_headers(self, headers):
         if type({}) is not type(headers):

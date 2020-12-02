@@ -1,7 +1,10 @@
+import importlib.util
 import mimetypes
 import os
 
 from pymocky.models.body_response import BodyResponse
+from pymocky.utils.file import File
+from pymocky.utils.log import Log
 
 
 class MappingResponse(object):
@@ -51,6 +54,8 @@ class MappingResponse(object):
                         "Content-Disposition"
                     ] = 'attachment; filename="{0}"'.format(os.path.basename(full_path))
             else:
+                Log.error("File not found: {0}".format(full_path), False)
+
                 self.clear()
                 self.status = 404
         elif is_json:
@@ -58,3 +63,36 @@ class MappingResponse(object):
 
     def body_response(self):
         return self.body.read_value()
+
+    def process_python_data(self, process_data):
+        full_path = File.real_path(self.base_path, self.body.file_name)
+
+        try:
+            if os.path.isfile(full_path):
+                # return a dict from python file
+                module_name = File.get_filename_without_extension(full_path)
+                spec = importlib.util.spec_from_file_location(module_name, full_path)
+                module = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(module)
+
+                returned_data = module.run(process_data)
+
+                # fill class with dict data
+                self.status = (
+                    returned_data["status"] if "status" in returned_data else 500
+                )
+                self.headers = (
+                    returned_data["headers"] if "headers" in returned_data else {}
+                )
+                self.body.value = (
+                    returned_data["body"] if "body" in returned_data else ""
+                )
+            else:
+                Log.error("File not found: {0}".format(full_path), False)
+                self.status = 404
+        except Exception as e:
+            Log.error(
+                "Error when execute file {0}: {1}".format(full_path, repr(e)), False
+            )
+
+            self.status = 500

@@ -39,7 +39,7 @@ class MappingItemsManagerTests(unittest.TestCase):
         mapper = MappingItemsManager()
 
         # two matches
-        mock_mapping_request = Mock(url="http://localhost/pymock_json_1", method="get")
+        mock_mapping_request = Mock(url="http://localhost/pymocky_json_1", method="get")
 
         self.assertEqual(
             len(mapper.response_for_mapping_request(mock_mapping_request)), 2
@@ -47,7 +47,7 @@ class MappingItemsManagerTests(unittest.TestCase):
 
         # normal - get
         mock_mapping_request = Mock(
-            url="http://localhost/pymock_hello_world", method="get"
+            url="http://localhost/pymocky_hello_world", method="get"
         )
 
         self.assertEqual(
@@ -56,7 +56,7 @@ class MappingItemsManagerTests(unittest.TestCase):
 
         # normal - post
         mock_mapping_request = Mock(
-            url="http://localhost/pymock_hello_world", method="post"
+            url="http://localhost/pymocky_hello_world", method="post"
         )
 
         self.assertEqual(
@@ -65,7 +65,7 @@ class MappingItemsManagerTests(unittest.TestCase):
 
         # normal - get - with params
         mock_mapping_request = Mock(
-            url="http://localhost/pymock_hello_world?name=test", method="get"
+            url="http://localhost/pymocky_hello_world?name=test", method="get"
         )
 
         self.assertEqual(
@@ -83,21 +83,21 @@ class MappingItemsManagerTests(unittest.TestCase):
         mapper = MappingItemsManager()
 
         mock_mapping_request = Mock(
-            url="http://localhost/pymock_hello_world?test1", method="Get"
+            url="http://localhost/pymocky_hello_world?test1", method="Get"
         )
         self.assertEqual(
             len(mapper.response_for_mapping_request(mock_mapping_request)), 1
         )
 
         mock_mapping_request = Mock(
-            url="http://localhost/pymock_hello_world?test2", method="gEt"
+            url="http://localhost/pymocky_hello_world?test2", method="gEt"
         )
         self.assertEqual(
             len(mapper.response_for_mapping_request(mock_mapping_request)), 1
         )
 
         mock_mapping_request = Mock(
-            url="http://localhost/pymock_hello_world?test3", method="post"
+            url="http://localhost/pymocky_hello_world?test3", method="post"
         )
         self.assertEqual(
             len(mapper.response_for_mapping_request(mock_mapping_request)), 0
@@ -114,7 +114,7 @@ class MappingItemsManagerTests(unittest.TestCase):
 
         mapper = MappingItemsManager()
 
-        mock_mapping_request = Mock(url="http://localhost/pymock_login", method="post")
+        mock_mapping_request = Mock(url="http://localhost/pymocky_login", method="post")
 
         self.assertEqual(
             len(mapper.mapping_item_for_mapping_request(mock_mapping_request)), 1
@@ -131,7 +131,7 @@ class MappingItemsManagerTests(unittest.TestCase):
 
         mapper = MappingItemsManager()
 
-        mock_mapping_request = Mock(url="http://localhost/pymock_login", method="post")
+        mock_mapping_request = Mock(url="http://localhost/pymocky_login", method="post")
 
         self.assertEqual(
             len(mapper.mapping_item_for_mapping_request(mock_mapping_request)), 1
@@ -149,7 +149,7 @@ class MappingItemsManagerTests(unittest.TestCase):
         mapper = MappingItemsManager()
 
         mock_mapping_request = Mock(
-            url="http://localhost/pymock_login_wrong", method="post"
+            url="http://localhost/pymocky_login_wrong", method="post"
         )
 
         self.assertEqual(
@@ -167,7 +167,7 @@ class MappingItemsManagerTests(unittest.TestCase):
 
         mapper = MappingItemsManager()
 
-        mock_mapping_request = Mock(url="http://localhost/pymock_login", method="post")
+        mock_mapping_request = Mock(url="http://localhost/pymocky_login", method="post")
 
         self.assertEqual(
             len(mapper.mapping_item_for_mapping_request(mock_mapping_request)), 1
@@ -184,12 +184,10 @@ class MappingItemsManagerTests(unittest.TestCase):
         mapper = MappingItemsManager()
 
         mock_mapping_request = Mock(
-            url="http://localhost:9000/pymock_hello_world?name=test", method="get"
+            url="http://localhost:9000/pymocky_hello_world?name=test", method="get"
         )
 
         response = mapper.response_for_mapping_request(mock_mapping_request)[0]
-
-        print(response.body.body_type)
 
         self.assertIn("Hello world from pymocky!", response.body_response())
 
@@ -204,12 +202,12 @@ class MappingItemsManagerTests(unittest.TestCase):
         mapper = MappingItemsManager()
 
         mock_mapping_request = Mock(
-            url="http://localhost:9000/pymock_hello_world?name=test", method="get"
+            url="http://localhost:9000/pymocky_hello_world?name=test", method="get"
         )
 
         response = mapper.response_for_mapping_request(mock_mapping_request)[0]
 
-        self.assertEqual(response.status, 200)
+        self.assertEqual(200, response.status)
 
     def test_return_correct_header(self):
         Config.init_from_args_dict(
@@ -222,12 +220,12 @@ class MappingItemsManagerTests(unittest.TestCase):
         mapper = MappingItemsManager()
 
         mock_mapping_request = Mock(
-            url="http://localhost:9000/pymock_json_1", method="get"
+            url="http://localhost:9000/pymocky_json_1", method="get"
         )
 
         response = mapper.response_for_mapping_request(mock_mapping_request)[0]
 
-        self.assertEqual(response.headers["Content-Type"], "application/json")
+        self.assertEqual("application/json", response.headers["Content-Type"])
 
 
 if __name__ == "__main__":

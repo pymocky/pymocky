@@ -64,3 +64,8 @@ class File(object):
     def remove_file(filename):
         if os.path.isfile(filename):
             os.remove(filename)
+
+    @staticmethod
+    def get_filename_without_extension(file_path):
+        path = Path(file_path)
+        return path.stem

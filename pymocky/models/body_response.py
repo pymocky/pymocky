@@ -10,6 +10,7 @@ class BodyResponse(object):
     IMAGE = "image"
     FILE = "file"
     JSON = "json"
+    PYTHON = "python"
 
     @property
     def body_type(self):
@@ -40,6 +41,10 @@ class BodyResponse(object):
                 self._body_type = BodyResponse.JSON
                 self.file_name = ""
                 self.value_from_object(dic["body_json"])
+
+            elif "body_python" in dic:
+                self._body_type = BodyResponse.PYTHON
+                self.file_name = dic["body_python"]
 
     def read_value(self):
         if callable(self.value):

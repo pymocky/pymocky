@@ -91,3 +91,13 @@ class BodyResponseTests(unittest.TestCase):
 
         self.assertEqual(body.body_type, BodyResponse.IMAGE)
         self.assertEqual(len(body.read_value()), 9260)
+
+    def test_body_type_python(self):
+        data = {"body_python": "extras/sample/files/dummy.py"}
+
+        res_path = None
+
+        body = BodyResponse(data, res_path)
+
+        self.assertEqual(body.body_type, BodyResponse.PYTHON)
+        self.assertEqual(len(body.read_value()), 0)

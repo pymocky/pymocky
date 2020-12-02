@@ -1,14 +1,14 @@
 mappings:
   - id: login
     request:
-      url: .*pymock_login$
+      url: .*pymocky_login$
     response:
       body_json:
         success: true
   - id: login
     scenario: login-error
     request:
-      url: .*pymock_login$
+      url: .*pymocky_login$
     response:
       body_json:
         success: false

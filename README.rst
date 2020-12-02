@@ -73,7 +73,7 @@ Example of YAML file
    - id: hello_world
       scenario: login-success
       request:
-         url: .*pymock_hello_world.*
+         url: .*pymocky_hello_world.*
          method: post
          query_string: .*param1=value&param2=value2
          form_fields:

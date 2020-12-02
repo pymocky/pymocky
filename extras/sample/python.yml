@@ -1,0 +1,5 @@
+mappings:
+  - request:
+      url: .*pymocky_python$
+    response:
+      body_python: files/dummy.py

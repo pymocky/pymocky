@@ -1,9 +1,9 @@
 mappings:
   - request:
-      url: .*pymock_pdf_1$
+      url: .*pymocky_pdf_1$
     response:
       body_file: files/dummy.pdf
   - request:
-      url: .*pymock_xml_1$
+      url: .*pymocky_xml_1$
     response:
       body_file: files/dummy.xml

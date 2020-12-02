@@ -10,7 +10,7 @@ class FileTests(unittest.TestCase):
         files = list(files)
         total = len(files)
 
-        self.assertEqual(total, 7)
+        self.assertEqual(total, 8)
 
     def test_real_path(self):
         base_path = ""

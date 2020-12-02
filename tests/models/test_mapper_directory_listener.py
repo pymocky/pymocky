@@ -34,4 +34,4 @@ class MapperDirectoryListenerTests(unittest.TestCase):
             content = File.get_file_content(file_path)
             File.write_to_file(path, "files.yml", content)
 
-            self.assertIn("Mappings loaded: 12", output.getvalue().strip())
+            self.assertIn("Mappings loaded: 13", output.getvalue().strip())
