@@ -58,7 +58,7 @@ class Core(object):
             except requests.exceptions.RequestException as e:
                 Log.error("Reload error: {0}".format(e))
         elif args.version:
-            Log.normal("Version: {0}".format(__version__.__version__))
+            Log.normal("Version: {0}".format(__version__))
         else:
             if not args.path:
                 Log.error("Path argument is required (--path or -p)")

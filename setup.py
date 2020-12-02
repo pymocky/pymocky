@@ -85,7 +85,7 @@ setup(
     author_email=EMAIL,
     python_requires=REQUIRES_PYTHON,
     url=URL,
-    packages=find_packages(exclude=["extras", "docs", "tests*"]),
+    packages=[],
     entry_points={
         "console_scripts": ["pymocky=pymocky.cli:main"],
     },
