@@ -31,7 +31,7 @@ class File(object):
 
         result = Path(os.path.expandvars(result))
 
-        return str(result.absolute())
+        return str(result.resolve().absolute())
 
     @staticmethod
     def write_to_file(dirname, filename, content):
