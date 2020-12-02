@@ -2,14 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Note: To use the 'upload' functionality of this file, you must install Twine:
-#   $ pip install -r requirements.txt
+#   $ pip install -r requirements_prod.txt
 
 import io
 import os
 import sys
 from shutil import rmtree
+from pymocky import __version__
 
-from setuptools import find_packages, setup, Command
+from setuptools import setup, Command, find_packages
 
 # Package meta-data.
 NAME = "pymocky"
@@ -18,7 +19,7 @@ URL = "https://github.com/pymocky/pymocky"
 EMAIL = "paulo@prsolucoes.com"
 AUTHOR = "Paulo Coutinho"
 REQUIRES_PYTHON = ">=3.5.0"
-VERSION = None
+VERSION = __version__
 LICENSE = "MIT"
 
 # Packages required
@@ -35,14 +36,7 @@ REQUIRED = [
 here = os.path.abspath(os.path.dirname(__file__))
 
 with io.open(os.path.join(here, "README.rst"), encoding="utf-8") as f:
-    long_description = "\n" + f.read()
-
-about = {}
-if not VERSION:
-    with open(os.path.join(here, NAME, "__version__.py")) as f:
-        exec(f.read(), about)
-else:
-    about["__version__"] = VERSION
+    LONG_DESCRIPTION = "\n" + f.read()
 
 
 class UploadCommand(Command):
@@ -76,22 +70,22 @@ class UploadCommand(Command):
         os.system("twine upload dist/*")
 
         self.status("Pushing git tags…")
-        os.system("git tag v{0}".format(about["__version__"]))
-        os.system("git push --tags")
+        os.system("git tag v{0}".format(VERSION))
+        os.system("git push origin v{0}".format(VERSION))
 
         sys.exit()
 
 
 setup(
     name=NAME,
-    version=about["__version__"],
+    version=VERSION,
     description=DESCRIPTION,
-    long_description=long_description,
+    long_description=LONG_DESCRIPTION,
     author=AUTHOR,
     author_email=EMAIL,
     python_requires=REQUIRES_PYTHON,
     url=URL,
-    packages=[""],
+    packages=find_packages(exclude=["extras", "docs", "tests*"]),
     entry_points={
         "console_scripts": ["pymocky=pymocky.cli:main"],
     },
