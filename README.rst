@@ -88,13 +88,14 @@ Example of YAML file
          body_raw: Hello world from pymocky!
          body_file: files/dummy.xml
          body_json:
-         success: false
-         data:
+            success: false
+            data:
             errors: []
          body_image: images/image1.png
+         body_python: files/dummy.py
 
 
-You can use "body_raw", "body_file", "body_json" or "body_image" as response type.
+You can use "body_raw", "body_file", "body_json", "body_image" or "body_python" as response type.
 
 .. code-block::
 
@@ -102,6 +103,7 @@ You can use "body_raw", "body_file", "body_json" or "body_image" as response typ
    body_file: File content with mimetype discovery by extension
    body_json: Json as YAML object or string
    body_image: Image file with mimetype discovery by extension
+   body_python: Python file to be executed
 
 
 Change scenario
