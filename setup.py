@@ -6,11 +6,13 @@
 
 import io
 import os
-import sys
+import subprocess
 from shutil import rmtree
-from pymocky import __version__
 
-from setuptools import setup, Command, find_packages
+import sys
+from setuptools import setup, Command
+
+from pymocky import __version__
 
 # Package meta-data.
 NAME = "pymocky"
@@ -64,14 +66,14 @@ class UploadCommand(Command):
             pass
 
         self.status("Building Source and Wheel (universal) distribution…")
-        os.system("{0} setup.py sdist bdist_wheel".format(sys.executable))
+        subprocess.check_call("{0} setup.py sdist bdist_wheel".format(sys.executable))
 
         self.status("Uploading the package to PyPi via Twine…")
-        os.system("twine upload dist/*")
+        subprocess.check_call("twine upload dist/*")
 
         self.status("Pushing git tags…")
-        os.system("git tag v{0}".format(VERSION))
-        os.system("git push origin v{0}".format(VERSION))
+        subprocess.check_call("git tag v{0}".format(VERSION))
+        subprocess.check_call("git push origin v{0}".format(VERSION))
 
         sys.exit()
 
