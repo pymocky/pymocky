@@ -66,7 +66,9 @@ class UploadCommand(Command):
             pass
 
         self.status("Building Source and Wheel (universal) distribution…")
-        subprocess.check_call("{0} setup.py sdist bdist_wheel".format(sys.executable), shell=True)
+        subprocess.check_call(
+            "{0} setup.py sdist bdist_wheel".format(sys.executable), shell=True
+        )
 
         self.status("Uploading the package to PyPi via Twine…")
         subprocess.check_call("twine upload dist/*", shell=True)
