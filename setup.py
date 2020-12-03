@@ -66,14 +66,14 @@ class UploadCommand(Command):
             pass
 
         self.status("Building Source and Wheel (universal) distribution…")
-        subprocess.check_call("{0} setup.py sdist bdist_wheel".format(sys.executable))
+        subprocess.check_call("{0} setup.py sdist bdist_wheel".format(sys.executable), shell=True)
 
         self.status("Uploading the package to PyPi via Twine…")
-        subprocess.check_call("twine upload dist/*")
+        subprocess.check_call("twine upload dist/*", shell=True)
 
         self.status("Pushing git tags…")
-        subprocess.check_call("git tag v{0}".format(VERSION))
-        subprocess.check_call("git push origin v{0}".format(VERSION))
+        subprocess.check_call("git tag v{0}".format(VERSION), shell=True)
+        subprocess.check_call("git push origin v{0}".format(VERSION), shell=True)
 
         sys.exit()
 
