@@ -1,5 +1,7 @@
+import sys
 from watchdog.events import FileSystemEventHandler
 
+from pymocky.models.config import Config
 from pymocky.utils.log import Log
 
 
@@ -12,6 +14,8 @@ class MapperDirectoryListener(FileSystemEventHandler):
             "Directory changed, rebuilding mapping settings...\n"
             "Path: %s" % event.src_path + "\nEvent type: %s" % event.event_type
         )
+
+        Config.reload_sys_path_list()
 
         self.mapping_manager.parse_yaml_files()
 

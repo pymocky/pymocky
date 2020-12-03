@@ -67,6 +67,7 @@ class MappingResponse(object):
     def process_python_data(self, process_data):
         full_path = File.real_path(self.base_path, self.body.file_name)
 
+        # execute module "run" function
         try:
             if os.path.isfile(full_path):
                 # return a dict from python file
@@ -97,7 +98,10 @@ class MappingResponse(object):
                 self.status = 404
         except Exception as e:
             Log.error(
-                "Error when execute file {0}: {1}".format(full_path, repr(e)), False
+                "Error when execute file: {0}".format(os.path.basename(full_path)),
+                False,
             )
+            Log.normal("Path: {0}".format(full_path))
+            Log.normal("Error: {0}".format(repr(e)))
 
             self.status = 500

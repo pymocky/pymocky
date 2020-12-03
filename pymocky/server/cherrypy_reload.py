@@ -33,6 +33,8 @@ def cherry_py_check_reload(func):
             if Config.verbose:
                 Log.info("Accessing: reload")
 
+            Config.reload_sys_path_list()
+
             self.mapping_handler.parse_yaml_files()
 
             Log.ok("Mapping settings rebuilt successfully")

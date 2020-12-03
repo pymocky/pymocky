@@ -1,6 +1,8 @@
 import requests
+import sys
 
 from pymocky import __version__
+from pymocky.models.config import Config
 from pymocky.models.constants import Constants
 from pymocky.server.cherrypy_server import CherryPyServer
 from pymocky.utils.log import Log
@@ -62,5 +64,7 @@ class Core(object):
         else:
             if not args.path:
                 Log.error("Path argument is required (--path or -p)")
+
+            Config.sys_path_list = sys.path.copy()
 
             CherryPyServer.start()

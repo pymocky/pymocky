@@ -93,9 +93,12 @@ Example of YAML file
             errors: []
          body_image: images/image1.png
          body_python: files/dummy.py
+         sys_path_list: ["auto"]
 
 
 You can use "body_raw", "body_file", "body_json", "body_image" or "body_python" as response type.
+
+When you use "body_python" you can add array "sys_path_list" and pymocky will add these paths to "sys.path" list. The list of "sys.path" is reloaded to original (when pymocky start is stored a copy of this list) everytime that YAML files are parsed again. When you use "auto" in the array, the path will be the directory of python file to be execute.
 
 .. code-block::
 
@@ -145,6 +148,12 @@ To install locally during development:
 .. code-block::
 
    python setup.py install
+
+or:
+
+.. code-block::
+
+   pip install -e .
 
 
 Packaging

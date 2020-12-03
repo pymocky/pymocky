@@ -1,3 +1,5 @@
+import sys
+
 from pymocky.models.constants import Constants
 
 
@@ -13,6 +15,8 @@ class Config(object):
 
     watch = False
     cors = False
+
+    sys_path_list = sys.path.copy()
 
     @classmethod
     def init_from_args(cls, args):
@@ -50,3 +54,7 @@ class Config(object):
         }
 
         return args
+
+    @classmethod
+    def reload_sys_path_list(cls):
+        sys.path = Config.sys_path_list.copy()

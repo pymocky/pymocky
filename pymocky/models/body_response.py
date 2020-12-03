@@ -1,7 +1,10 @@
 import json
 import os
 
+import sys
+
 from pymocky.utils.file import File
+from pymocky.utils.log import Log
 
 
 class BodyResponse(object):
@@ -45,6 +48,23 @@ class BodyResponse(object):
             elif "body_python" in dic:
                 self._body_type = BodyResponse.PYTHON
                 self.file_name = dic["body_python"]
+
+                # add sys path item to sys path list
+                sys_path_list = dic["sys_path_list"] if "sys_path_list" in dic else []
+
+                if sys_path_list:
+                    for sys_path_item in sys_path_list:
+                        if sys_path_item == "auto":
+                            # auto = dir of python file
+                            full_path = File.real_path(self.base_path, self.file_name)
+                            full_path = os.path.dirname(full_path)
+                        else:
+                            # create path from item specified
+                            full_path = File.real_path(self.base_path, sys_path_item)
+
+                        if full_path not in sys.path:
+                            Log.info("Path added to sys.path: {0}".format(full_path))
+                            sys.path.append(full_path)
 
     def read_value(self):
         if callable(self.value):
