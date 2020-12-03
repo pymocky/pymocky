@@ -50,7 +50,7 @@ class BodyResponse(object):
                 self.file_name = dic["body_python"]
 
                 # add sys path item to sys path list
-                sys_path_list = dic["sys_path_list"] if "sys_path_list" in dic else []
+                sys_path_list = dic["sys_path"] if "sys_path" in dic else []
 
                 if sys_path_list:
                     for sys_path_item in sys_path_list:
