@@ -18,7 +18,7 @@ from pymocky import __version__
 NAME = "pymocky"
 DESCRIPTION = "Send push notification from command line for single or multiple targets"
 URL = "https://github.com/pymocky/pymocky"
-EMAIL = "paulo@prsolucoes.com"
+EMAIL = "paulocoutinhox@gmail.com"
 AUTHOR = "Paulo Coutinho"
 REQUIRES_PYTHON = ">=3.5.0"
 VERSION = __version__
