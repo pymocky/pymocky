@@ -15,7 +15,7 @@
    :target: https://codecov.io/gh/pymocky/pymocky
    :alt: codecov
 
-|  
+|
 
 Mock server to return static response.
 
@@ -25,7 +25,7 @@ Install
 
 .. code-block::
 
-   pip install pymocky
+   python3 -m pip install pymocky
 
 
 Check with command:
@@ -133,27 +133,27 @@ To execute all tests use the command:
 
 .. code-block::
 
-   python -m pytest tests
+   python3 -m pytest tests
 
 
 To coverage test use the command:
 
 .. code-block::
 
-   python -m pytest --cov=. --cov-report=xml --cov-report=html tests
+   python3 -m pytest --cov=. --cov-report=xml --cov-report=html tests
 
 
 To install locally during development:
 
 .. code-block::
 
-   python setup.py install
+   python3 setup.py install
 
 or:
 
 .. code-block::
 
-   pip install -e .
+   python3 -m pip install -e .
 
 
 Packaging
@@ -163,7 +163,7 @@ To package and upload for distribution on PyPi server use:
 
 .. code-block::
 
-   python setup.py upload
+   python3 setup.py upload
 
 
 Contributing
