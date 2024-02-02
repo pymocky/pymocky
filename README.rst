@@ -23,14 +23,14 @@ Mock server to return static response.
 Install
 -------
 
-.. code-block::
+.. code-block:: bash
 
    python3 -m pip install pymocky
 
 
 Check with command:
 
-.. code-block::
+.. code-block:: bash
 
    pymocky -h
 
@@ -38,28 +38,28 @@ Check with command:
 How to use
 ----------
 
-.. code-block::
+.. code-block:: bash
 
    pymocky -p extras/sample/
 
 
 Test with command (need curl):
 
-.. code-block::
+.. code-block:: bash
 
    curl http://localhost:9000/login
 
 
 To change from default scenario to other use (server need be running):
 
-.. code-block::
+.. code-block:: bash
 
    pymocky --update-scenario "login-error"
 
 
 Test again with command (need curl):
 
-.. code-block::
+.. code-block:: bash
 
    curl http://localhost:9000/login
 
@@ -67,7 +67,7 @@ Test again with command (need curl):
 Example of YAML file
 --------------------
 
-.. code-block::
+.. code-block:: yaml
 
    mappings:
    - id: hello_world
@@ -100,7 +100,7 @@ You can use "body_raw", "body_file", "body_json", "body_image" or "body_python" 
 
 When you use "body_python" you can add array "sys_path" and pymocky will add these paths to "sys.path" list. The list of "sys.path" is reloaded to original (when pymocky start is stored a copy of this list) everytime that YAML files are parsed again. When you use "auto" in the array, the path will be the directory of python file to be execute.
 
-.. code-block::
+.. code-block:: yaml
 
    body_raw: Raw text as response
    body_file: File content with mimetype discovery by extension
@@ -114,7 +114,7 @@ Change scenario
 
 To change from default scenario to other use (server need be running):
 
-.. code-block::
+.. code-block:: bash
 
    pymocky --update-scenario "login-error"
 
@@ -124,34 +124,34 @@ Testing
 
 You need install test dependencies with the command:
 
-.. code-block::
+.. code-block:: bash
 
    python3 -m pip install -r requirements_tests.txt
 
 
 To execute all tests use the command:
 
-.. code-block::
+.. code-block:: bash
 
    python3 -m pytest tests
 
 
 To coverage test use the command:
 
-.. code-block::
+.. code-block:: bash
 
    python3 -m pytest --cov=. --cov-report=xml --cov-report=html tests
 
 
 To install locally during development:
 
-.. code-block::
+.. code-block:: bash
 
    python3 setup.py install
 
 or:
 
-.. code-block::
+.. code-block:: bash
 
    python3 -m pip install -e .
 
@@ -161,7 +161,7 @@ Packaging
 
 To package and upload for distribution on PyPi server use:
 
-.. code-block::
+.. code-block:: bash
 
    python3 setup.py upload
 
