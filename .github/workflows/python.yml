@@ -4,6 +4,7 @@ on:
   push:
     paths-ignore:
       - '**.md'
+      - '**.rst'
       - 'docs/**'
       - 'extras/images/**'
 
