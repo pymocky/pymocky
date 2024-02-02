@@ -5,8 +5,8 @@
 
 |
 
-.. image:: https://github.com/pymocky/pymocky/workflows/Python%20package/badge.svg
-   :target: https://github.com/pymocky/pymocky/workflows/Python%20package/badge.svg
+.. image:: https://github.com/pymocky/pymocky/actions/workflows/python.yml/badge.svg
+   :target: https://github.com/pymocky/pymocky/actions/workflows/python.yml/badge.svg
    :alt: Python package
 
 
