@@ -1,5 +1,4 @@
 import mimetypes
-from argparse import ArgumentParser
 
 import colorama
 

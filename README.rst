@@ -126,7 +126,7 @@ You need install test dependencies with the command:
 
 .. code-block::
 
-   pip install -r requirements_tests.txt
+   python3 -m pip install -r requirements_tests.txt
 
 
 To execute all tests use the command:
