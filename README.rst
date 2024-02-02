@@ -197,4 +197,4 @@ License
 
 `MIT <http://opensource.org/licenses/MIT>`_
 
-Copyright (c) 2020-present, Paulo Coutinho
+Copyright (c) 2020-2024, Paulo Coutinho

@@ -20,7 +20,7 @@ DESCRIPTION = "Send push notification from command line for single or multiple t
 URL = "https://github.com/pymocky/pymocky"
 EMAIL = "paulocoutinhox@gmail.com"
 AUTHOR = "Paulo Coutinho"
-REQUIRES_PYTHON = ">=3.5.0"
+REQUIRES_PYTHON = ">=3.7.0"
 VERSION = __version__
 LICENSE = "MIT"
 
@@ -102,11 +102,11 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.5",
-        "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
         "Programming Language :: Python :: Implementation :: CPython",
         "Programming Language :: Python :: Implementation :: PyPy",
     ],
