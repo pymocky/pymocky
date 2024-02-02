@@ -50,9 +50,9 @@ class MappingResponse(object):
                     self.headers["Content-Type"] = mimetype[0]
 
                 if is_file:
-                    self.headers[
-                        "Content-Disposition"
-                    ] = 'attachment; filename="{0}"'.format(os.path.basename(full_path))
+                    self.headers["Content-Disposition"] = (
+                        'attachment; filename="{0}"'.format(os.path.basename(full_path))
+                    )
             else:
                 Log.error("File not found: {0}".format(full_path), False)
 
